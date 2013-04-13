@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+ 
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+<tiles-definitions>
+
+
+	<definition name="baseLayout" template="/BaseLayout.jsp">
+		<put-attribute name="header" value="/Header.jsp" />
+		<put-attribute name="body" value="" />
+		<put-attribute name="footer" value="/Footer.jsp" />
+	</definition>
+	<definition name="/HomePage.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/HomePage.jsp" />
+		
+	</definition>
+	
+		<definition name="/Register.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/Register.jsp" />
+	</definition>
+	<definition name="/Success.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/Success.jsp" />
+	</definition>
+	
+	<definition name="/FAQ.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/FAQ.jsp" />
+	</definition>
+	
+	<definition name="/BookTheatre.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/BookTheatre.jsp" />
+	</definition>
+	
+	<definition name="/MovieDetail.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/MovieDetail.jsp" />
+	</definition>
+	
+	<definition name="/SignIn.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/SignIn.jsp" />
+	</definition>
+	
+	<definition name="/Schedule.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/Schedule.jsp" />
+	</definition>
+	
+	<definition name="/BookTicket.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/BookTicket.jsp" />
+	</definition>
+	
+	<definition name="/seatSelection.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/SeatSelection.jsp" />
+	</definition>
+	
+	<definition name="confirmSeatsBookOp" extends="baseLayout">
+		<put-attribute name="body" value="/SeatBookSuccess.jsp" />
+	</definition>
+	<definition name="/TimeToRegister.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/TimeToRegister.jsp" />
+	</definition>
+	<definition name="/ViewProfile.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/ViewProfile.jsp" />
+	</definition>
+	
+	<definition name="/EditProfile.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/EditProfile.jsp" />
+	</definition>
+	
+	<definition name="/BookedHistory.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/BookedHistory.jsp" />
+	</definition>
+	
+	<definition name="/ErrorOccurred.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/ErrorOccurred.jsp" />
+	</definition>
+	
+	<definition name="/SuccessCancellation.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/SuccessCancellation.jsp" />
+	</definition>
+	
+	<definition name="/AllMovies.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/AllMovies.jsp" />
+	</definition>
+	
+	<definition name="/AllTheatres.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/AllTheatres.jsp" />
+	</definition>
+	<definition name="/NoMovies.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/NoMovies.jsp" />
+	</definition>
+	
+	<definition name="/AboutUs.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/AboutUs.jsp" />
+	</definition>
+	
+	<definition name="/NoBookedData.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/NoBookedData.jsp" />
+	</definition>
+	<definition name="/CannotSignIn.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/CannotSignIn.jsp" />
+	</definition>
+	<definition name="/SuccessfulRetrieval.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/SuccessfulRetrieval.jsp" />
+	</definition>
+	
+	<definition name="/SuccessfulPasswordChange.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/SuccessfulPasswordChange.jsp" />
+	</definition>
+	
+	<definition name="/ChangePassword.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/ChangePassword.jsp" />
+	</definition>
+	
+	<definition name="/NoMoney.tiles" extends="baseLayout">
+		<put-attribute name="body" value="/NoMoney.jsp" />
+	</definition>
+	
+</tiles-definitions>

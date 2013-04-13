@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources" />
+
+	<package name="default" extends="struts-default" namespace="/">
+
+		<result-types>
+			<result-type name="tiles"
+				class="org.apache.struts2.views.tiles.TilesResult" />
+		</result-types>
+
+		<action name="home" class="edu.iiitb.bookmyshow.action.HomePage">
+			<result name="success" type="tiles">/HomePage.tiles</result>
+		</action>
+
+		<action name="register" class="edu.iiitb.bookmyshow.action.Register"
+			method="registration">
+			<result name="success" type="tiles">/Register.tiles</result>
+		</action>
+
+		<action name="faq" class="edu.iiitb.bookmyshow.action.FAQ">
+			<result name="success" type="tiles">/FAQ.tiles</result>
+		</action>
+
+		<action name="successfulRegistration" class="edu.iiitb.bookmyshow.action.Register"
+			method="successful">
+			<result name="success" type="tiles">/Success.tiles</result>
+			<result name="error" type="tiles">/Register.tiles</result>
+			<result name="input" type="tiles">/Register.tiles</result>
+		</action>
+		<action name="searchTheatre" class="edu.iiitb.bookmyshow.action.SelectTheatre"
+			method="bookTheatre">
+			<result name="success" type="tiles">/BookTheatre.tiles</result>
+			<result name="error" type="tiles">/NoMovies.tiles</result>
+		</action>
+
+		<action name="movieDetail" class="edu.iiitb.bookmyshow.action.MovieDetail">
+			<result name="success" type="tiles">/MovieDetail.tiles</result>
+		</action>
+
+		<action name="sign" class="edu.iiitb.bookmyshow.action.SignIn">
+			<result name="success" type="tiles">/SignIn.tiles</result>
+		</action>
+
+		<action name="signIn" class="edu.iiitb.bookmyshow.action.SignIn"
+			method="successful">
+			<result name="success" type="redirect">home</result>
+			<result name="error" type="tiles">/SignIn.tiles</result>
+		</action>
+
+		<action name="schedule" class="edu.iiitb.bookmyshow.action.Schedule">
+			<result name="success" type="tiles">/Schedule.tiles</result>
+
+		</action>
+
+		<action name="bookTicket" class="edu.iiitb.bookmyshow.action.BookTicket"
+			method="bookTicketDetails">
+			<result name="success" type="tiles">/BookTicket.tiles</result>
+			<result name="error" type="tiles">/TimeToRegister.tiles</result>
+
+		</action>
+
+		<action name="seatSelection" class="edu.iiitb.bookmyshow.action.SeatSelection"
+			method="selectSeats">
+			<result name="success" type="tiles">/seatSelection.tiles</result>
+
+		</action>
+
+		<action name="bookConfirmedSeats" class="edu.iiitb.bookmyshow.action.SeatSelection"
+			method="bookSeats">
+			<result name="success" type="tiles">confirmSeatsBookOp</result>
+			<result name ="addmoney" type="tiles">/NoMoney.tiles</result>
+			<result name ="signin" type="tiles">/TimeToRegister.tiles</result>
+			<result name ="error" type="tiles">/NoMoney.tiles</result>
+		</action>
+
+		<action name="generateTicket" class="edu.iiitb.bookmyshow.action.TicketGeneration"
+			method="generateTicket">
+			<result name="success" type="stream">
+				<param name="inputName">fileStream</param>
+				<param name="contentType">application/pdf</param>
+			</result>
+		</action>
+
+		<action name="logout" class="edu.iiitb.bookmyshow.action.SignIn"
+			method="logout">
+			<result name="success" type="redirect">home</result>
+			<result name="error" type="tiles">/TimeToRegister.tiles</result>
+
+		</action>
+
+		<action name="viewProfile" class="edu.iiitb.bookmyshow.action.ViewProfile"
+			method="viewProfile">
+			<result name="success" type="tiles">/ViewProfile.tiles</result>
+			<result name="error" type="tiles">/TimeToRegister.tiles</result>
+		</action>
+
+		<action name="editProfile" class="edu.iiitb.bookmyshow.action.EditProfile"
+			method="editProfile">
+			<result name="success" type="tiles">/EditProfile.tiles</result>
+
+		</action>
+		<action name="updateProfile" class="edu.iiitb.bookmyshow.action.UpdateProfile">
+			<result name="success" type="redirect">home</result>
+			<result name="error" type="tiles">/EditProfile.tiles</result>
+
+		</action>
+		<action name="bookedHistory" class="edu.iiitb.bookmyshow.action.BookedHistory">
+			<result name="success" type="tiles">/BookedHistory.tiles</result>
+			<result name="error" type="tiles">/TimeToRegister.tiles</result>
+			<result name="noData" type="tiles">/NoBookedData.tiles</result>
+
+		</action>
+
+		<action name="cancelBooking" class="edu.iiitb.bookmyshow.action.BookedHistory"
+			method="cancellation">
+			<result name="success" type="tiles">/SuccessCancellation.tiles
+			</result>
+			<result name="error" type="tiles">/ErrorOccurred.tiles</result>
+		</action>
+
+		<action name="allMovies" class="edu.iiitb.bookmyshow.action.AllMovies"
+			method="allMovieList">
+			<result name="success" type="tiles">/AllMovies.tiles</result>
+		</action>
+
+		<action name="allTheatres" class="edu.iiitb.bookmyshow.action.AllTheatres"
+			method="allTheatreList">
+			<result name="success" type="tiles">/AllTheatres.tiles</result>
+		</action>
+
+		<action name="about" class="edu.iiitb.bookmyshow.action.AboutUs">
+			<result name="success" type="tiles">/AboutUs.tiles</result>
+		</action>
+
+		<action name="cannotSignIn" class="edu.iiitb.bookmyshow.action.CannotSignIn">
+			<result name="success" type="tiles">/CannotSignIn.tiles</result>
+		</action>
+
+		<action name="changePassword" class="edu.iiitb.bookmyshow.action.ChangePassword">
+			<result name="error" type="tiles">/TimeToRegister.tiles</result>
+			<result name="success" type="tiles">/ChangePassword.tiles</result>
+		</action>
+
+<action name="successChangePassword" class="edu.iiitb.bookmyshow.action.ChangePassword" method="verifyChange">
+			<result name="error" type="tiles">/ChangePassword.tiles</result>
+			<result name="success" type="tiles">/SuccessfulPasswordChange.tiles</result>
+		</action>
+		<action name="forgotPassword" class="edu.iiitb.bookmyshow.action.CannotSignIn"
+			method="forgotPassword">
+			<result name="success" type="tiles">/SuccessfulRetrieval.tiles
+			</result>
+			<result name="error" type="tiles">/CannotSignIn.tiles</result>
+		</action>
+
+		<action name="forgotUserName" class="edu.iiitb.bookmyshow.action.CannotSignIn"
+			method="forgotUserName">
+			<result name="success" type="tiles">/SuccessfulRetrieval.tiles
+			</result>
+			<result name="error" type="tiles">/CannotSignIn.tiles</result>
+		</action>
+	</package>
+
+</struts>
